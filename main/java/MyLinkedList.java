@@ -91,4 +91,31 @@ public class MyLinkedList {
                 tempNode = tempNode.getNext();
         }
     }
+    //delete 40 from list
+    public void delete_40(INode myNode) {
+
+        INode tempNode = this.head;
+        INode previousNode = this.head;
+        while (tempNode != null && tempNode.getNext() != null) {
+            if (tempNode.getKey().equals(40)) {
+                previousNode.setNext(tempNode.getNext());
+                this.tail = tempNode.getNext();
+                break;
+            } else {
+                previousNode = tempNode;
+                tempNode = tempNode.getNext();
+            }
+        }
+    }
+
+    //get size of the linked list after deleting 40
+    public Integer sizeOfList() {
+        Integer count = 0;
+        INode tempNode = this.head;
+        if(tempNode != null){
+            count++;
+            tempNode = tempNode.getNext();
+        }
+        return count;
+    }
 }

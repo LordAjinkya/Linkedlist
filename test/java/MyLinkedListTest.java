@@ -123,4 +123,30 @@ public class MyLinkedListTest {
               myLinkedList.tail.equals(myThirdNode);
       Assertions.assertTrue(result);
   }
+
+  //delete 40 and get size after deleting 40
+  @Test
+  public void given3NumbersWhenToLinkedListShouldDelete40() {
+      MyNode<Integer> myFirstNode = new MyNode<>(56);
+      MyNode<Integer> mySecondNode = new MyNode<>(30);
+      MyNode<Integer> myThirdNode = new MyNode<>(70);
+      MyNode<Integer> myFourthNode = new MyNode<>(40);
+      MyLinkedList myLinkdList = new MyLinkedList();
+      myLinkdList.append(myFirstNode);
+      myLinkdList.append(mySecondNode);
+      myLinkdList.append(myFourthNode);
+      myLinkdList.append(myThirdNode);
+      myLinkdList.printmyNodes();
+      myLinkdList.delete_40(myFourthNode);
+      myLinkdList.printmyNodes();
+      myLinkdList.sizeOfList();
+      System.out.println("Size of list is: "+myLinkdList.sizeOfList());
+
+
+      boolean result = myLinkdList.head.equals(myFirstNode) &&
+              myLinkdList.head.getNext().equals(mySecondNode) &&
+              myLinkdList.tail.equals(myThirdNode);
+      Assertions.assertTrue(result);
+
+  }
 }
