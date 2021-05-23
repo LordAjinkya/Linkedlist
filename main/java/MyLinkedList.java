@@ -65,4 +65,17 @@ public class MyLinkedList {
         tempNode.getNext().setNext(null);
         // return tempNode;
     }
+    //search node in list
+    public INode searchNode(INode newNode) {
+        INode tempNode = newNode;
+        while(tempNode !=null && tempNode.getNext() != null){
+            if(tempNode.getKey().equals(newNode.getKey())){
+                System.out.println("The Found value: "+tempNode.getKey());
+                break;
+            }
+            else
+                tempNode = tempNode.getNext();
+        }
+        return tempNode;
+    }
 }
