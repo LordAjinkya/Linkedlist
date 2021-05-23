@@ -33,6 +33,12 @@ public class MyLinkedList {
             this.tail = newNode;
         }
     }
+    //inserting node 30 between 56 and 70
+    public void insert(INode myNode, INode newNode) {
+        INode tempNode = myNode.getNext();
+        myNode.setNext(newNode);
+        newNode.setNext(tempNode);
+    }
     //printing nodes
     public void printmyNodes(){
         StringBuffer myNodes = new StringBuffer("My Nodes :");
