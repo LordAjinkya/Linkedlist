@@ -51,4 +51,9 @@ public class MyLinkedList {
         myNodes.append(tempNode.getKey());
         System.out.println(myNodes);
     }
+    //pop method to delete elements from first
+    public void pop(INode newNode) {
+        INode tempNode = newNode;
+        this.head = tempNode.getNext();
+    }
 }

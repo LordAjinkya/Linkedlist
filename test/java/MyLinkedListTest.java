@@ -34,4 +34,38 @@ public class MyLinkedListTest {
                 myLinkedList.tail.equals(myFirstNode);
         Assertions.assertTrue(result);
     }
+    //inserting 30 between 56&70
+    @Test
+    public void given3Numbers_pop_FirstNumber_ShouldBeDelete_From_Top() {
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.printmyNodes();
+        myLinkedList.pop(myFirstNode);
+        myLinkedList.printmyNodes();
+        boolean result = myLinkedList.head.equals(mySecondNode) &&
+                myLinkedList.head.getNext().equals(myThirdNode) &&
+                myLinkedList.tail.equals(myThirdNode);
+        Assertions.assertTrue(result);
+    }
+////pop method used to delete 1st node
+    @Test
+    void given1stElementWhenDeleteShouldPassLinkedListResult() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.add(mySecondNode);
+        myLinkedList.add(myThirdNode);
+        myLinkedList.pop(myFirstNode);
+        myLinkedList.printmyNodes();
+        boolean result=myLinkedList.head.equals(mySecondNode)&&
+                myLinkedList.tail.equals(myFirstNode);
+        Assertions.assertTrue(result);
+    }
 }
