@@ -102,4 +102,25 @@ public class MyLinkedListTest {
         boolean result = foundNode.equals(mySecondNode);
         Assertions.assertTrue(result);
     }
+  /////add 40 after 30
+  @Test
+  public void given3Number_ShouldBe_Added_After30() {
+      MyNode<Integer> myThirdNode = new MyNode<>(70);
+      MyNode<Integer> mySecondNode = new MyNode<>(30);
+      MyNode<Integer> myFirstNode = new MyNode<>(56);
+      MyNode<Integer> myFourthNode = new MyNode<>(40);
+      MyLinkedList myLinkedList = new MyLinkedList();
+      myLinkedList.append(myFirstNode);
+      myLinkedList.append(mySecondNode);
+      myLinkedList.append(myThirdNode);
+      myLinkedList.printmyNodes();
+      myLinkedList.addAfter(myFourthNode);
+      myLinkedList.printmyNodes();
+
+      boolean result = myLinkedList.head.equals(myFirstNode) &&
+              myLinkedList.head.getNext().equals(mySecondNode) &&
+              myLinkedList.head.getNext().getNext().equals(myFourthNode) &&
+              myLinkedList.tail.equals(myThirdNode);
+      Assertions.assertTrue(result);
+  }
 }

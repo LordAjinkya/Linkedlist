@@ -56,6 +56,7 @@ public class MyLinkedList {
         INode tempNode = newNode;
         this.head = tempNode.getNext();
     }
+
     public void popLast( INode newNode) {
         INode tempNode = newNode;
         while (tempNode.getNext().equals((tail))){
@@ -77,5 +78,17 @@ public class MyLinkedList {
                 tempNode = tempNode.getNext();
         }
         return tempNode;
+    }
+//add 40 after 30
+    public void addAfter(INode newNode) {
+        INode tempNode = this.head;
+        while(tempNode !=null && tempNode.getNext() != null) {
+            if (tempNode.getKey().equals(30)) {
+                newNode.setNext(tempNode.getNext());
+                tempNode.setNext(newNode);
+                break;
+            } else
+                tempNode = tempNode.getNext();
+        }
     }
 }
